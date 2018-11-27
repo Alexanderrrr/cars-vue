@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <NavBar />
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/car.jpeg">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <router-view></router-view>
   </div>
