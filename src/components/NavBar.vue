@@ -10,12 +10,6 @@
           <li class="nav-item">
             <router-link class="nav-link" :to="{name:'add-car'}">Add Cars</router-link>
           </li>
-          <li class="nav-item">
-              <router-link to="/create-costumer">Add Costumer</router-link>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
         </ul>
       </div>
     </nav>

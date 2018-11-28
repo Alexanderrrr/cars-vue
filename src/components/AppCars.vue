@@ -11,6 +11,7 @@
             <th scope="col">Doors</th>
             <th scope="col">Automatic</th>
             <th scope="col">Engine</th>
+            <th scope="col">Edit Car</th>
          </tr>
        </thead>
        <tbody>
@@ -23,6 +24,9 @@
           <td>{{ car.numberOfDoors }}</td>
           <td>{{ car.isAutomatic }}</td>
           <td>{{ car.engine }}</td>
+          <td>
+            <router-link :to="{ name: 'edit-car', params: {id: car.id} }" class="btn btn-primary">Edit</router-link>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -39,11 +43,14 @@ export default {
       this.cars = response.data
     });
   },
+
   data(){
     return {
       cars: [],
     }
-  }
+  },
+
+  
 }
 </script>
 
