@@ -17,7 +17,7 @@
       </div>
       <div class="form-group">
         <label>Max Speed</label>
-        <input v-model="newCar.maxSpeed" type="numbers" class="form-control" placeholder="Max Speed">
+        <input v-model="newCar.maxSpeed" type="number" class="form-control" placeholder="Max Speed">
       </div>
       <div class="form-group">
         <label>Number Of Doors</label>
@@ -41,8 +41,6 @@
     </form>
     <button @click="preview" class="btn btn-primary" id="previewBtn">Preview</button><br>
     <button @click="editThisCar" class="btn btn-primary">Edit</button><br>
-
-    {{getCar}}
   </div>
 </template>
 
@@ -50,10 +48,13 @@
 import carsService from '../services/CarsService'
 
 export default {
-  beforeMount(){
-    return carsService.get(Number(this.$route.params.id))
+  created(){
+    return carsService.get(this.$route.params.id)
     .then(response => {
       this.newCar = response.data
+    })
+    .catch(e => {
+      console.log(e.response.data);
     })
   },
 

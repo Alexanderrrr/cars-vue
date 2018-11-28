@@ -12,6 +12,7 @@
             <th scope="col">Automatic</th>
             <th scope="col">Engine</th>
             <th scope="col">Edit Car</th>
+            <th scope="col">Delete This Car</th>
          </tr>
        </thead>
        <tbody>
@@ -26,6 +27,9 @@
           <td>{{ car.engine }}</td>
           <td>
             <router-link :to="{ name: 'edit-car', params: {id: car.id} }" class="btn btn-primary">Edit</router-link>
+          </td>
+          <td>
+            <button class="btn btn-danger" @click='removeCar(car.id)'>Remove</button>
           </td>
         </tr>
       </tbody>
@@ -50,7 +54,19 @@ export default {
     }
   },
 
-  
+  methods: {
+    removeCar(id){
+      let answer = prompt(`ARE YOU SURE?
+        yes / no`)
+      if (answer == 'yes') {
+        carsService.delete(id)
+      }
+      else {
+        next()
+      }
+
+    }
+  }
 }
 </script>
 
