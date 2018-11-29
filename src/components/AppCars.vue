@@ -57,7 +57,7 @@ export default {
   methods: {
     removeCar(id){
       let answer = prompt(`ARE YOU SURE?
-        yes / no`)
+        yes / no`, 'yes')
       if (answer == 'yes') {
         carsService.delete(id)
       }

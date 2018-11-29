@@ -11,7 +11,7 @@ class CarsService {
   }
 
   add(newCar){
-    axios.post('cars', newCar)
+    return axios.post('cars', newCar)
 
   }
 
